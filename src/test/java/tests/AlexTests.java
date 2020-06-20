@@ -140,7 +140,37 @@ public class AlexTests extends BaseTest {
     //Будет ли ошибка если зайти заблокированным пользователем
     public void test6() {
         String username = "locked_out_user";
-        String password = "secret_sauce";
+        LoginPage loginPage = new LoginPage(driver);
+        Assert.assertTrue(loginPage.isPageOpened(), "Login page was not opened.");
+        loginPage.login(username, password);
+        System.out.println(loginPage.getError());
+    }
+
+    @Test
+    //Будет ли ошибка если не вводить логин
+    public void test7() {
+        String username = "";
+        LoginPage loginPage = new LoginPage(driver);
+        Assert.assertTrue(loginPage.isPageOpened(), "Login page was not opened.");
+        loginPage.login(username, password);
+        System.out.println(loginPage.getError());
+    }
+
+    @Test
+    //Будет ли ошибка если не вводить пароль
+    public void test8() {
+        String password = "";
+        LoginPage loginPage = new LoginPage(driver);
+        Assert.assertTrue(loginPage.isPageOpened(), "Login page was not opened.");
+        loginPage.login(username, password);
+        System.out.println(loginPage.getError());
+    }
+
+    @Test
+    //Будет ли ошибка если не вводить логин и пароль
+    public void test9() {
+        String username = "";
+        String password = "";
         LoginPage loginPage = new LoginPage(driver);
         Assert.assertTrue(loginPage.isPageOpened(), "Login page was not opened.");
         loginPage.login(username, password);
