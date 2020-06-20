@@ -12,7 +12,7 @@ public class AlexTests extends BaseTest {
     String password = "secret_sauce";
 
     @Test
-    //проверим выпадет ли ошибка, если не ввести фамилию
+    //проверим выпадет ли ошибка, если не ввести фамилию на странице CheckOutStepOne
     public void test1() {
 
         LoginPage loginPage = new LoginPage(driver);
@@ -38,7 +38,7 @@ public class AlexTests extends BaseTest {
     }
 
     @Test
-    //проверим выпадет ли ошибка, если не ввести имя
+    //проверим выпадет ли ошибка, если не ввести имя на странице CheckOutStepOne
     public void test2() {
 
         LoginPage loginPage = new LoginPage(driver);
@@ -63,7 +63,7 @@ public class AlexTests extends BaseTest {
     }
 
     @Test
-    //проверим выпадет ли ошибка, если не ввести почтовый индекс
+    //проверим выпадет ли ошибка, если не ввести почтовый индекс на странице CheckOutStepOne
     public void test3() {
 
         LoginPage loginPage = new LoginPage(driver);
@@ -137,7 +137,7 @@ public class AlexTests extends BaseTest {
     }
 
     @Test
-    //Будет ли ошибка если зайти заблокированным пользователем
+    //Будет ли ошибка если зайти заблокированным пользователем на странице Login
     public void test6() {
         String username = "locked_out_user";
         LoginPage loginPage = new LoginPage(driver);
@@ -147,7 +147,7 @@ public class AlexTests extends BaseTest {
     }
 
     @Test
-    //Будет ли ошибка если не вводить логин
+    //Будет ли ошибка если не вводить логин на странице Login
     public void test7() {
         String username = "";
         LoginPage loginPage = new LoginPage(driver);
@@ -157,7 +157,7 @@ public class AlexTests extends BaseTest {
     }
 
     @Test
-    //Будет ли ошибка если не вводить пароль
+    //Будет ли ошибка если не вводить пароль на странице Login
     public void test8() {
         String password = "";
         LoginPage loginPage = new LoginPage(driver);
@@ -167,7 +167,7 @@ public class AlexTests extends BaseTest {
     }
 
     @Test
-    //Будет ли ошибка если не вводить логин и пароль
+    //Будет ли ошибка если не вводить логин и пароль на странице Login
     public void test9() {
         String username = "";
         String password = "";
