@@ -17,16 +17,16 @@ public class BrowserService {
 
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless");
-                chromeOptions.addArguments("--disable-gpu");
-                chromeOptions.addArguments("--window-size=1920,1200");
-                chromeOptions.addArguments("--ignore-certificate-errors");
-                chromeOptions.addArguments("--silent");
-                //chromeOptions.addArguments("--start-maximized");
-                //chromeOptions.setHeadless(true);
+               // chromeOptions.addArguments("--headless");
+               // chromeOptions.addArguments("--disable-gpu");
+                //chromeOptions.addArguments("--window-size=1920,1200");
+                //chromeOptions.addArguments("--ignore-certificate-errors");
+                //chromeOptions.addArguments("--silent");
+               // chromeOptions.addArguments("--start-maximized");
+               // chromeOptions.setHeadless(true);
 
                 driver = new ChromeDriver(chromeOptions);
-                driver.manage().window().maximize();
+               // driver.manage().window().maximize();
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 break;
         }

@@ -7,9 +7,11 @@ import pages.CheckoutStepOne;
 import pages.LoginPage;
 import pages.ProductsPage;
 
+
 public class AlexTests extends BaseTest {
     String username = "standard_user";
     String password = "secret_sauce";
+
 
     @Test
     //проверим выпадет ли ошибка, если не ввести фамилию на странице CheckOutStepOne
@@ -32,7 +34,7 @@ public class AlexTests extends BaseTest {
         cartPage.moveInCheckout();
 
         CheckoutStepOne checkoutStepOne = new CheckoutStepOne(driver);
-        checkoutStepOne.fillInformation("Alex", "", "" );
+        checkoutStepOne.fillInformation("Alex", "", "");
         System.out.println(checkoutStepOne.getError());
 
     }
@@ -57,7 +59,7 @@ public class AlexTests extends BaseTest {
         cartPage.moveInCheckout();
 
         CheckoutStepOne checkoutStepOne = new CheckoutStepOne(driver);
-        checkoutStepOne.fillInformation("", "Bachurin", "423432" );
+        checkoutStepOne.fillInformation("", "Bachurin", "423432");
         System.out.println(checkoutStepOne.getError());
 
     }
@@ -82,7 +84,7 @@ public class AlexTests extends BaseTest {
         cartPage.moveInCheckout();
 
         CheckoutStepOne checkoutStepOne = new CheckoutStepOne(driver);
-        checkoutStepOne.fillInformation("Alex", "Bachurin", "" );
+        checkoutStepOne.fillInformation("Alex", "Bachurin", "");
         System.out.println(checkoutStepOne.getError());
 
     }
