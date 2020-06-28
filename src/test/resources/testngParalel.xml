@@ -4,6 +4,7 @@
     <test name="Group A DEMO">
         <classes>
             <class name="tests.AlexParallelTests"></class>
+            <class name="tests.IvanParallelTests"></class>
         </classes>
     </test>
 </suite>
