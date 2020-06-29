@@ -18,7 +18,7 @@ public class IvanDependTest {
     }
 
     @Test(priority = 1)
-    //Залогинимся и проверим на той ли мы странице
+    //Логин и проверка открытия страницы LoginPage
     public void login() {
 
         LoginPage loginPage = new LoginPage(driver);
@@ -28,7 +28,7 @@ public class IvanDependTest {
     }
 
     @Test(dependsOnMethods={"login"}, priority = 2)
-    //добавим 2 товара в корзину
+    //Добавление двух товаров в корзину
     public void products() {
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addToCart("Sauce Labs Fleece Jacket");
@@ -46,7 +46,7 @@ public class IvanDependTest {
     }
 
     @Test(dependsOnMethods={"cart"}, priority = 4)
-    //Заполняем данные на странице CheckoutStepOne
+    //Заполнение данные на странице CheckoutStepOne
     public void checkoutfill() {
             CheckoutStepOne checkoutStepOne = new CheckoutStepOne(driver);
             checkoutStepOne.fillInformation("Ivan", "Varvaruk", "123456");
@@ -54,6 +54,7 @@ public class IvanDependTest {
     }
 
     @Test(dependsOnMethods = {"checkoutfill"}, priority = 5)
+    //Проверка открытия страницы overviewPage, нажатие на кнопку Cancel
     public void overviewcheck() {
         OverviewPage overviewPage = new OverviewPage(driver);
         Assert.assertTrue(overviewPage.isPageOpened());
@@ -61,6 +62,7 @@ public class IvanDependTest {
     }
 
     @Test(dependsOnMethods = {"overviewcheck"}, priority = 6)
+    //Проверка работоспособности кнопки Cancel
     public void cancelbutton() {
         ProductsPage productsPage = new ProductsPage(driver);
         OverviewPage overviewPage = new OverviewPage(driver);
