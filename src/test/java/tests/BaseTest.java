@@ -6,7 +6,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import webcore.BrowserService;
 
-@Listeners(AlexListener.class)
+@Listeners(Listener.class)
+
 
 public class BaseTest {
     WebDriver driver;
